@@ -41,7 +41,7 @@ export default function Navbar() {
         </NavigationMenu>
         </div>
         <div className='flex justify-center items-center gap-2'>
-         <Button className='bg-[#128C76] rounded-none w-24 h-11 hover:bg-[#128C76] hover:opacity-[0.8]'>Login</Button>
+         <Button className='bg-emraldGreen rounded-none w-24 h-11 hover:bg-[#128C76] hover:opacity-[0.8]'>Login</Button>
          <Button className="border border-rosePink text-rosePink bg-white rounded-none w-24 h-11 hover:bg-rosePink hover:text-white">
           Register
         </Button>

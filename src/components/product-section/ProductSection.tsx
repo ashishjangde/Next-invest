@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import ProductCard from '../product-card/ProductCard';
 import { CardType } from '../product-card/ProductCard';
+import { Button } from '../ui/button';
 
 const products : CardType[] = [
  {
@@ -94,7 +95,7 @@ export default function ProductSection() {
   return (
     <div className="relative flex">
      
-      <div className="absolute left-8 top-96 h-full w-1/4">
+      <div className="absolute left-8 top-[500px] h-full w-1/4">
         <Image 
           src="/asset/images/Shape.svg"
           alt="background shape"
@@ -120,8 +121,13 @@ export default function ProductSection() {
         </div>
         
         {/* Product Grid */}
+        <div className='mt-16 flex flex-col items-center justify-center gap-24'>
         <div className="container mx-auto mt-16">
           <ProductCard data={products} />
+        </div>
+        <Button className='border border-rosePink text-rosePink bg-white rounded-none w-40 h-11 hover:bg-rosePink hover:text-white'>
+            View All Projects
+            </Button>
         </div>
       </div>
     </div>
