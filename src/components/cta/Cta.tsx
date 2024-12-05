@@ -4,7 +4,15 @@ import { Button } from '../ui/button'
 
 export default function Cta() {
   return (
-    <div className='bg-white w-full h-[380px] relative flex items-center mt-16 justify-center'>
+    <div className='bg-white w-full h-[380px] relative flex items-center mt-16 justify-center '>
+        <div className='absolute right-0 top-10 pr-7'>
+                 <Image
+                    src="/asset/images/Shape.svg"
+                    alt="Background decoration"
+                    width={140} 
+                    height={140} 
+                    />
+        </div>     
         <div className='flex items-center justify-between w-full pl-[15%] pr-[15%]'>
             <div className='flex flex-col gap-6'>
                 

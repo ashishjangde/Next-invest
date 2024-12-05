@@ -48,7 +48,7 @@ export default function ProductCard({ data }: { data: CardType[] }) {
 
   return (
     <div className="grid grid-cols-3 gap-8">
-      {data.slice(0, 6).map((card) => { // Limit total products to 6
+      {data.slice(0, 6).map((card) => { 
         const progressPercentage = (card.getPrice / card.totalPrice) * 100;
         const isHovered = hoveredCardId === card.id;
         
@@ -68,7 +68,7 @@ export default function ProductCard({ data }: { data: CardType[] }) {
                 <CardHeader className="p-0">
                   <div className="relative w-full h-48">
                     <div className="absolute z-10 top-2 left-2 flex gap-2">
-                      {card.tags.slice(0, 2).map((tag) => ( // Limit tags to the first 2
+                      {card.tags.slice(0, 2).map((tag) => ( 
                         <motion.span
                           key={tag}
                           initial={{ opacity: 0 }}

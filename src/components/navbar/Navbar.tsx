@@ -1,18 +1,18 @@
+'use client'
 import React from 'react'
-import Link from 'next/navigation'
 import Image from 'next/image'
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Button } from '../ui/button'
+import Link from 'next/link'
+import { signOut, useSession } from 'next-auth/react'
 
 export default function Navbar() {
+  const {data ,status} = useSession()
   return (
     <nav className='flex justify-around items-center bg-white h-20 shadow-md '>
       <div>    
@@ -41,10 +41,39 @@ export default function Navbar() {
         </NavigationMenu>
         </div>
         <div className='flex justify-center items-center gap-2'>
-         <Button className='bg-emraldGreen rounded-none w-24 h-11 hover:bg-[#128C76] hover:opacity-[0.8]'>Login</Button>
-         <Button className="border border-rosePink text-rosePink bg-white rounded-none w-24 h-11 hover:bg-rosePink hover:text-white">
-          Register
-        </Button>
+          {
+              status === 'authenticated' ? (
+              <>
+                 {
+                data.user?.roles?.includes('ADMIN') && (
+                    <Link href={"/dashboard"}>
+                  <Button className='bg-emraldGreen rounded-none w-24 h-11 hover:bg-emraldGreen hover:opacity-[0.8]'>
+                    Dashboard
+                  </Button>
+                  </Link>
+                  )
+                 } 
+                <Button onClick={() => signOut()} className='bg-red-600 rounded-none w-24 h-11 hover:bg-red-600 hover:opacity-[0.8]'>
+                  Logout
+                </Button>
+                </>
+              ) : (
+                <>
+                <Link href="/login">
+              <Button className='bg-emraldGreen rounded-none w-24 h-11 hover:bg-emraldGreen hover:opacity-[0.8]'>
+                Login
+                </Button>
+                </Link>
+              <Link href="/register">
+              <Button className="border border-rosePink text-pink-600 bg-white rounded-none w-24 h-11 hover:bg-rosePink hover:text-white">
+                Register
+              </Button>
+              </Link>
+                </>
+              )
+
+          }
+       
 
         </div>
       </div>

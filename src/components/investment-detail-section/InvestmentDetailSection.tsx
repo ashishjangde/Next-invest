@@ -48,7 +48,7 @@ export default function InvestmentDetailSection() {
               <h1 className='text-3xl font-bold mb-4'>
                 $7M+ paid out to <br /> investors 
               </h1>
-              <p className='text-lg text-gray-600'>
+              <p className='text-base text-gray-400'>
                 Next Invest has already paid over $7M in cash <br />
                 returns to investors. Earn potential cash payments <br />
                 through unique revenue-share and debt financing <br />
